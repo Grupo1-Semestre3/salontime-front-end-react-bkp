@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/client_pages/index.jsx";
 import Login from "./pages/client_pages/login.jsx";
 import Servicos from "./pages/client_pages/servicos.jsx";
-// import Cadastro from "./pages/client_pages/Cadastro.jsx";
+import Cadastro from "./pages/client_pages/cadastro.jsx";
 
 export default function App() {
   return (
@@ -14,8 +14,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/Servicos" element={<Servicos />} />
-        {/* <Route path="/cadastro" element={<Cadastro />} /> */}
+        <Route path="/servicos" element={<Servicos />} />
+        <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </BrowserRouter>
   );

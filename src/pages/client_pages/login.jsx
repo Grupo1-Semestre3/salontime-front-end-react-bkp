@@ -24,9 +24,9 @@ export default function Login() {
 
 
         <div className="login__form">
-          <button href="index.html" class="login__voltar paragrafo-2" onclick={() => navigate("/")}>← Voltar</button>
-          <div class="login__title">
-            <h1 class="titulo-1">Bem vinda(o) de volta!</h1>
+          <button href="index.html" className="login__voltar paragrafo-2" onClick={() => navigate("/")}>← Voltar</button>
+          <div className="login__title">
+            <h1 className="titulo-1">Bem vinda(o) de volta!</h1>
           </div>
           <form onSubmit={handleSubmit} className="login__formulario ">
             <div className="input_pai">
@@ -61,6 +61,12 @@ export default function Login() {
 
             <div className="linha-horizontal"></div>
           </form>
+
+          <div style={{ gap: `5px` }}>
+            <p className="paragrafo-2">Não tem uma conta?
+              <button className="login__cadastro" onClick={() => navigate('/cadastro')}>Cadastre-se</button>
+            </p>
+          </div>
         </div>
       </div>
     </>

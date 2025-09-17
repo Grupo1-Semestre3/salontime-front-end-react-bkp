@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import NavSemLogin from "/src/components/NavSemLogin.jsx";
+import NavbarLandingPage from "/src/components/NavbarLandingPage.jsx";
+import Footer from "/src/components/Footer.jsx";
+
 
 // --- COMPONENTE ESPECIALIDADE ---
 function EspecialidadeCard({ icon, titulo, descricao }) {
@@ -39,26 +41,6 @@ function AvaliacaoCard({ nome, data, estrelas, servico, comentario, imagem }) {
       <p className="paragrafo-2">{comentario}</p>
       <img src={imagem} alt="imagem-avaliacao" className="img-avaliacao" />
     </div>
-  );
-}
-
-// --- COMPONENTE FOOTER ---
-function Footer() {
-  return (
-    <footer className="footer_pai">
-      <div className="footer_linha1">
-        <img src="/src/assets/svg/logo_white.svg" alt="logo" style={{ height: "45px" }} />
-        <div className="footer_linha1_social">
-          <img src="/src/assets/svg/icon_facebook.svg" alt="icon-social" />
-          <img src="/src/assets/svg/icon_instagram3.svg" alt="icon-social" />
-          <img src="/src/assets/svg/icon_linkedin.svg" alt="icon-social" />
-        </div>
-      </div>
-      <div className="footer_linha2"></div>
-      <p className="paragrafo-2" style={{ color: "var(--rosa-4)" }}>
-        @Copyright2025 Todos os direitos reservados.
-      </p>
-    </footer>
   );
 }
 
@@ -114,7 +96,7 @@ export default function Index() {
 
   return (
     <>
-      <NavSemLogin />
+      <NavbarLandingPage />
 
       {/* Home */}
       <section className="home_section_pai">
@@ -147,20 +129,49 @@ export default function Index() {
         </div>
       </section>
 
-
-      {/* Avaliações */}
-      <section className="avaliacao_section_pai" style={{ padding: "0px !important" }}>
-        <p className="titulo-1">Avaliações:</p>
-        <div className="avaliacao_section_carrossel">
-          <div className="group">
-            {avaliacoes.map((av, idx) => (
-              <AvaliacaoCard key={idx} {...av} />
-            ))}
-          </div>
-        </div>
+      {/* Portifólio] */}
+      <section className="portifolio_section_pai">
+        <p className="paragrafo-2 italic portifolio_section_title">Um pouco do meu trabalho!</p>
+        <img src="/src/assets/img/portifolio_teste.png" alt="portifolio" />
+        <a href="https://www.instagram.com/marinamotahair/" target="_blank" rel="noopener noreferrer">
+          <button className="btn-rosa bold" style={{ height: "50px" }}>
+            <img src="/src/assets/svg/icon_instagram.svg" alt="" style={{ height: "30px" }} />
+            Veja mais!
+          </button>
+        </a>
       </section>
 
 
+      {/* Sobre mim */}
+      <section className="sobre_section_pai">
+        <img src="/src/assets/img/marina_sobre_mim.png" alt="sobre-mim" style={{ height: "576px" }} />
+        <div className="sobre_section_container">
+          <p className="titulo-1" style={{ fontFamily: "Georgia" }}>Sobre Mim</p>
+          <p className="paragrafo-2" style={{ maxWidth: "424px" }}>
+            Texto com uma breve descrição da Marina<br />
+            Texto com uma breve descrição da Marina<br />
+            Texto com uma breve descrição da Marina<br />
+            Texto com uma breve descrição da Marina
+          </p>
+          <p className="paragrafo-2 italic sobre_section_social">
+            <img src="/src/assets/svg/icon_whatsapp 1.svg" alt="icon-zap" />
+            (11) 96555-8010
+          </p>
+          <p className="paragrafo-2 italic sobre_section_social">
+            <img src="/src/assets/svg/icon_instagram2.svg" alt="icon-insta" />
+            @marinamotahair
+          </p>
+          <button
+            className="btn-rosa"
+            onClick={() => navigate("/servicos")}
+          >
+            <img src="/src/assets/vector/icon_sum/jam-icons/outline & logos/Vector.svg" alt="" />
+            Agendar
+          </button>
+        </div>
+      </section>
+
+      {/* Localizacao */}
       <section className="section_local_pai">
         <div className="section_local_title">
           <p className="titulo-1" style={{ color: "var(--rosa-3)", fontFamily: "Georgia" }}>
@@ -192,6 +203,23 @@ export default function Index() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+          </div>
+        </div>
+      </section>
+
+      {/* Avaliações */}
+      <section className="avaliacao_section_pai" style={{ padding: "0px !important" }}>
+        <p className="titulo-1">Avaliações:</p>
+        <div className="avaliacao_section_carrossel">
+          <div className="group">
+            {avaliacoes.map((av, idx) => (
+              <AvaliacaoCard key={idx} {...av} />
+            ))}
+          </div>
+          <div className="group">
+            {avaliacoes.map((av, idx) => (
+              <AvaliacaoCard key={idx} {...av} />
+            ))}
           </div>
         </div>
       </section>
